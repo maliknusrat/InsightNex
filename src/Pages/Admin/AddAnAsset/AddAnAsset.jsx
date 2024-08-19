@@ -28,7 +28,7 @@ const AddAnAsset = () => {
             admin: user?.email
         }
 
-        fetch('http://localhost:5000/addAsset', {
+        fetch('https://insight-store-server.vercel.app/addAsset', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

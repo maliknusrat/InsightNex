@@ -10,7 +10,7 @@ const MyAssetDownload = () => {
     // const [loader, setLoader] = useState(false);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/assetDetails/${id}`)
+        fetch(`https://insight-store-server.vercel.app/assetDetails/${id}`)
             .then(res => res.json())
             .then(data => {
                 setProfile(data);

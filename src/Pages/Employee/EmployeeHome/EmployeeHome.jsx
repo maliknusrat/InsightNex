@@ -12,7 +12,7 @@ const EmployeeHome = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/employee/${user?.email}`)
+        fetch(`https://insight-store-server.vercel.app/employee/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setEmployees(data);

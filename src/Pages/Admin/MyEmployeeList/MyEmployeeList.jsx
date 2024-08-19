@@ -10,7 +10,7 @@ const MyEmployeeList = () => {
 
   const fetchData = async () => {
     const response = await fetch(
-      `http://localhost:5000/employee/${user?.email}`
+      `https://insight-store-server.vercel.app/employee/${user?.email}`
     );
     const data = await response.json();
     console.log(data.myEmployee);
@@ -31,7 +31,7 @@ const MyEmployeeList = () => {
       type: employee.type,
     };
 
-    fetch(`http://localhost:5000/removeEmployeeToAdmin/${user?.email}`, {
+    fetch(`https://insight-store-server.vercel.app/removeEmployeeToAdmin/${user?.email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -42,7 +42,7 @@ const MyEmployeeList = () => {
       .then((data) => {
         console.log(data);
         if (data.modifiedCount > 0) {
-          fetch(`http://localhost:5000/removeAdmin/${employee.email}`, {
+          fetch(`https://insight-store-server.vercel.app/removeAdmin/${employee.email}`, {
             method: "PUT",
             headers: {
               "content-type": "application/json",

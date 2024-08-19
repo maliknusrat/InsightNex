@@ -11,7 +11,7 @@ const MyAsset = () => {
     const [records, setRecords] = useState([]);
     
     useEffect(() => {
-        fetch(`http://localhost:5000/reqAssetCollection1/${user?.email}`)
+        fetch(`https://insight-store-server.vercel.app/reqAssetCollection1/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setReq(data);
@@ -20,7 +20,7 @@ const MyAsset = () => {
     }, [user])
     
     const handleCancelReq = id => {
-        fetch(`http://localhost:5000/cancelAssetReq/${id}`, {
+        fetch(`https://insight-store-server.vercel.app/cancelAssetReq/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -60,7 +60,7 @@ const MyAsset = () => {
     }
 
     const handleReturn = id => {
-        fetch(`http://localhost:5000/returnAsset/${id}`, {
+        fetch(`https://insight-store-server.vercel.app/returnAsset/${id}`, {
             method:'PATCH'
         })
             .then(res => res.json())

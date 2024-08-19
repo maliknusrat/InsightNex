@@ -9,7 +9,7 @@ const Profile = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/employee/${user?.email}`)
+        fetch(`https://insight-store-server.vercel.app/employee/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setProfile(data);
@@ -30,7 +30,7 @@ const Profile = () => {
 
         console.log(userInfo);
 
-        fetch(`http://localhost:5000/updateInfo/${user?.email}`,{
+        fetch(`https://insight-store-server.vercel.app/updateInfo/${user?.email}`,{
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

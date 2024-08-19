@@ -13,7 +13,7 @@ const RequestAsset = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/employee/${user?.email}`)
+        fetch(`https://insight-store-server.vercel.app/employee/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setProfile(data);
@@ -21,7 +21,7 @@ const RequestAsset = () => {
     }, [user])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/addAsset/${profile?.myAdmin}`)
+        fetch(`https://insight-store-server.vercel.app/addAsset/${profile?.myAdmin}`)
             .then(res => res.json())
             .then(data => {
                 setAssets(data);

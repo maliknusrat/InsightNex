@@ -10,7 +10,7 @@ const UpdatedDetail = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/mycustomRequest123Details/${id}`)
+        fetch(`https://insight-store-server.vercel.app/mycustomRequest123Details/${id}`)
             .then(res => res.json())
             .then(data => {
                 setEmployees(data);
@@ -39,7 +39,7 @@ const UpdatedDetail = () => {
             date: date
         }
 
-        fetch(`http://localhost:5000/updateCustomAsset/${id}`,{
+        fetch(`https://insight-store-server.vercel.app/updateCustomAsset/${id}`,{
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

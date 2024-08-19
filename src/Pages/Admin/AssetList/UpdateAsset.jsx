@@ -10,7 +10,7 @@ const UpdateAsset = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/updateAsset/${id}`)
+        fetch(`https://insight-store-server.vercel.app/updateAsset/${id}`)
             .then(res => res.json())
             .then(data => {
                 setAsset(data);
@@ -33,7 +33,7 @@ const UpdateAsset = () => {
 
         // console.log(userInfo);
 
-        fetch(`http://localhost:5000/updateAssetInfo/${id}`,{
+        fetch(`https://insight-store-server.vercel.app/updateAssetInfo/${id}`,{
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

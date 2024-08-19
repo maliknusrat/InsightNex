@@ -8,7 +8,7 @@ const MyCustomRequest = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/mycustomRequest123/${user?.email}`)
+        fetch(`https://insight-store-server.vercel.app/mycustomRequest123/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setEmployees(data);

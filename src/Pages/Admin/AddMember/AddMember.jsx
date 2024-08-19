@@ -15,7 +15,7 @@ const AddMember = () => {
   // console.log(employee.email);
 
   const fetchData = async () => {
-    const response = await fetch(`http://localhost:5000/findEmployee`);
+    const response = await fetch(`https://insight-store-server.vercel.app/findEmployee`);
     const data = await response.json();
     setEmployees(data);
   };
@@ -36,7 +36,7 @@ const AddMember = () => {
       date: employee.date,
     };
 
-    fetch(`http://localhost:5000/addEmployeeToAdmin/${user?.email}`, {
+    fetch(`https://insight-store-server.vercel.app/addEmployeeToAdmin/${user?.email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -47,7 +47,7 @@ const AddMember = () => {
       .then((data) => {
         console.log(data);
         if (data.modifiedCount > 0) {
-          fetch(`http://localhost:5000/addAdmin/${employee.email}`, {
+          fetch(`https://insight-store-server.vercel.app/addAdmin/${employee.email}`, {
             method: "PUT",
             headers: {
               "content-type": "application/json",

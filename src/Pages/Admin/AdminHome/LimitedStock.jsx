@@ -7,7 +7,7 @@ const LimitedStock = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/limitedStock/${user?.email}`)
+        fetch(`https://insight-store-server.vercel.app/limitedStock/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setEmployees(data);

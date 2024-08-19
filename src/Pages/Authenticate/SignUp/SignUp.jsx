@@ -61,7 +61,7 @@ const SignUp = () => {
             .then(result => {
                 updateUserData(result.user, name, photo);
                 //send data to the server
-                fetch('http://localhost:5000/employee', {
+                fetch('https://insight-store-server.vercel.app/employee', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

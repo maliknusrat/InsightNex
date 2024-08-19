@@ -8,7 +8,7 @@ const CustomRequestList = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/customAssetCollection/${user?.email}`)
+        fetch(`https://insight-store-server.vercel.app/customAssetCollection/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setAssets(data);
@@ -16,7 +16,7 @@ const CustomRequestList = () => {
     }, [user])
     
     const handleMakeApproved = (id) => {
-        fetch(`http://localhost:5000/admin/approved/${id}`, {
+        fetch(`https://insight-store-server.vercel.app/admin/approved/${id}`, {
             method:'PATCH'
         })
             .then(res => res.json())
@@ -34,7 +34,7 @@ const CustomRequestList = () => {
     }
 
     const handleMakeRejected = (id) => {
-        fetch(`http://localhost:5000/admin/rejected/${id}`, {
+        fetch(`https://insight-store-server.vercel.app/admin/rejected/${id}`, {
             method:'PATCH'
         })
             .then(res => res.json())

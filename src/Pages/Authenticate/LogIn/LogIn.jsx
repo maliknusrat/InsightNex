@@ -18,7 +18,7 @@ const LogIn = () => {
         signIn(email, password)
             .then(result => {
                 form.reset();
-                fetch(`http://localhost:5000/employee/${email}`)
+                fetch(`https://insight-store-server.vercel.app/employee/${email}`)
                     .then(res => res.json())
                     .then(data => {
                         console.log(data);
@@ -62,7 +62,7 @@ const LogIn = () => {
         .then(result => {
                 const user = result.user;
                 console.log(user);
-                fetch(`http://localhost:5000/employee/${user.email}`)
+                fetch(`https://insight-store-server.vercel.app/employee/${user.email}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);

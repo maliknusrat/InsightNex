@@ -7,7 +7,7 @@ const TopMostItem = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/topMostItem/${user?.email}`)
+        fetch(`https://insight-store-server.vercel.app/topMostItem/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setEmployees(data);

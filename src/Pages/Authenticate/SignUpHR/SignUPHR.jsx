@@ -83,7 +83,7 @@ const SignUPHR = () => {
         createUser(email, password)
             .then(result => {
                 updateUserData(result.user, name, photo);
-                fetch('http://localhost:5000/admin', {
+                fetch('https://insight-store-server.vercel.app/admin', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

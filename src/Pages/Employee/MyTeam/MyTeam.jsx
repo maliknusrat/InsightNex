@@ -15,7 +15,7 @@ const MyTeam = () => {
     let allUsers = [];
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myTeamInfo/${user?.email}`)
+        fetch(`https://insight-store-server.vercel.app/myTeamInfo/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 // setAdmin(data);

@@ -9,7 +9,7 @@ const AllRequest = () => {
 
   const fetchData = async () => {
     const response = await fetch(
-      `http://localhost:5000/adminRequest/${user?.email}`
+      `https://insight-store-server.vercel.app/adminRequest/${user?.email}`
     );
     const data = await response.json();
     setRequests(data);
@@ -33,7 +33,7 @@ const AllRequest = () => {
   };
 
   const handleMakeApproved = (id) => {
-    fetch(`http://localhost:5000/admin/approvedReq/${id}`, {
+    fetch(`https://insight-store-server.vercel.app/admin/approvedReq/${id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
@@ -52,7 +52,7 @@ const AllRequest = () => {
   };
 
   const handleMakeRejected = (id) => {
-    fetch(`http://localhost:5000/admin/rejectedReq/${id}`, {
+    fetch(`https://insight-store-server.vercel.app/admin/rejectedReq/${id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())

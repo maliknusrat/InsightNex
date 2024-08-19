@@ -7,7 +7,7 @@ const MyPendingRequest = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myPendingRequest123/${user?.email}`)
+        fetch(`https://insight-store-server.vercel.app/myPendingRequest123/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setEmployees(data);

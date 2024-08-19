@@ -13,7 +13,7 @@ const AssetList = () => {
 
   const fetchData = async () => {
     const response = await fetch(
-      `http://localhost:5000/addAsset/${user?.email}`
+      `https://insight-store-server.vercel.app/addAsset/${user?.email}`
     );
     const data = await response.json();
     setAssets(data);
@@ -55,7 +55,7 @@ const AssetList = () => {
 
   const handleDelete = (id) => {
     console.log("delete");
-    fetch(`http://localhost:5000/deleteAsset/${id}`, {
+    fetch(`https://insight-store-server.vercel.app/deleteAsset/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

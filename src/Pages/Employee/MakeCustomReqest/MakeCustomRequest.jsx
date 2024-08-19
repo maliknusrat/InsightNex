@@ -12,7 +12,7 @@ const MakeCustomRequest = () => {
     let month = date.getMonth() + 1;
     let year = date.getFullYear();
     useEffect(() => {
-        fetch(`http://localhost:5000/employee/${user?.email}`)
+        fetch(`https://insight-store-server.vercel.app/employee/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setProfile(data);
@@ -50,7 +50,7 @@ const MakeCustomRequest = () => {
         console.log(newAssets);
 
         //send data to server
-        fetch('http://localhost:5000/customAsset', {
+        fetch('https://insight-store-server.vercel.app/customAsset', {
             method:'POST',
             headers:{
                 'content-type': 'application/json'
@@ -72,6 +72,7 @@ const MakeCustomRequest = () => {
             }
         }))
     }
+    //https://insight-store-server-p6pqr878h-malik-nusrats-projects.vercel.app/
     return (
         <div>
             <div className="max-w-6xl mx-auto pt-20 pb-20">

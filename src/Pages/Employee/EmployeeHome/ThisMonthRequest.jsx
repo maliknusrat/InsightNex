@@ -10,7 +10,7 @@ const ThisMonthRequest = () => {
     const monthNumber = dateObject.getMonth() + 1;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myPendingRequest1234/${user?.email}`)
+        fetch(`https://insight-store-server.vercel.app/myPendingRequest1234/${user?.email}`)
             .then(res => res.json())
             .then(data => {
 

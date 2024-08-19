@@ -30,7 +30,7 @@ const ModalAsset = ({ handleCloseModalLike, showModal, asset }) => {
 
         console.log(assetInfo);
         
-        fetch('http://localhost:5000/requestAsset', {
+        fetch('https://insight-store-server.vercel.app/requestAsset', {
             method:'POST',
             headers:{
                 'content-type': 'application/json'
